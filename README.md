@@ -4,6 +4,7 @@ O TP de registros hidrícos é o projeto de Desenvolvimento de Aplicações dist
 Utilizando de novas técnologias de desenvolvimento voltada para Web/mobile como Angular, Cordova e Ionic. Sob oritentação do professor Pedro
 
 Composto pelo grupo
+
 Bruno Oliveira Rocha - <https://www.linkedin.com/in/bruno-oliveira-rocha-378176110/>
 -
 Gabriel Marzano Gonçalves - <https://www.linkedin.com/in/gabriel-marzano-05405316b/>
