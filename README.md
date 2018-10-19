@@ -20,7 +20,10 @@ Não hávia acesso externo ao software no momento da criação deste documento.
 ## Técnologias, Métodos e Conceitos
 
 GRH é um aplicativo Web/Mobile.
+É um sistema de cadastro de usuários para representar o consumo de água de cada usuário de um determinado condomínio, que contem dados do cadastro dos usuários comuns e do usuário master além de exibição dos dados em modelos de gráfico de consumo, com meta x realizado.
 
+Método
+-
 O sistema utiliza um conjunto de técnologias que em sua base são formadas pelo JavaScript, como AngularJS, Apache Cordova e Ionic e também uma API de conexão com banco de dados desenvolvida originalmente e baseada em PHP que baseado na resquição GET faz a consulta no MySQL e retorna os dados relatívos a consulta solicitada.
 
 ### Descrição das Técnologias
