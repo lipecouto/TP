@@ -6,11 +6,11 @@ Utilizando de novas técnologias de desenvolvimento voltada para Web/mobile como
 Composto pelo grupo
 
 Bruno Oliveira Rocha - <https://www.linkedin.com/in/bruno-oliveira-rocha-378176110/>
--
+
 Gabriel Marzano Gonçalves - <https://www.linkedin.com/in/gabriel-marzano-05405316b/>
--
+
 Philipe Pereira do Couto - <www.linkedin.com/in/philipecouto>
--
+
 Victor Hamon Ribeiro de Souza - <https://www.linkedin.com/in/victorhamon/>
 
 ## Acesso ao Sistema
@@ -37,11 +37,11 @@ PHP é a linguagem server side mais famosa que há, atualmente em sua versão 7.
 
 ## Autores e Consultas
 **Devmidia** - <https://www.devmedia.com.br/guia/ionic/38372>
--
+
 **FULL STACKER DEVELOPER** - <https://www.youtube.com/watch?v=4d_3Okh74iA>
--
+
 **Apache Cordova** - <https://en.wikipedia.org/wiki/Apache_Cordova>
--
+
 **Angular.Io** - <https://angular.io/>
 
 
