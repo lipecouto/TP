@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Apartamentos</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+  
+<ion-content padding>
+  <ion-list>
+      <button ion-item *ngFor="let a of consumosApto" 
+        (click)="selecionaConsumo(a.codigo)"> 
+        Mês: {{a.mes_ano | date:'MM/yyyy'}} - Meta: {{a.meta}}
+        <div class="item-note" item-end>
+            <h3>{{nomeApto(a.apto)}}</h3>
+        </div>
+      </button>
+  </ion-list>
+  <div id="mais"> 
+    <button ion-button round color="primary" (click)="novoConsumo()"> 
+      <ion-icon name="add"></ion-icon> 
+    </button>
+  </div>  
+</ion-content>
+    

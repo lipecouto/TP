@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Condomínio</ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="abas" color="secondary">
+      <ion-segment-button value="condominio">
+        Dados do Condomínio
+      </ion-segment-button>
+      <ion-segment-button value="sindicos" color="primary">
+        Sindicância
+      </ion-segment-button>      
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="abas">
+    <ion-list *ngSwitchCase="'condominio'">        
+      <ion-item>        
+        <h2>Nome</h2>
+        <p>{{ condominio.nome }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Número de Edifícios</h2>
+        <p>{{ condominio.nm_edificios }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Endereço</h2>
+        <p>{{ condominio.endereco }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Bairro</h2>
+        <p>{{ condominio.bairro }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Cidade</h2>
+        <p>{{ condominio.cidade }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Estado</h2>
+        <p>{{ condominio.estado }}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'sindicos'">
+      <ion-item>        
+        <h2><ion-icon name="home" item-start></ion-icon>{{ condominio.nome }}</h2>
+        <p>{{ condominio.endereco }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>Síndico</h2>
+        <p>{{ condominio.sindico }}</p>
+      </ion-item>
+      <ion-item>        
+        <h2>SubSindico</h2>
+        <p>{{ condominio.subsindico }}</p>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

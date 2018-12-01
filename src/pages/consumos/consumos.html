@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Consumo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      Selecione o tipo de cadastro de consumo de água que deseja realizar
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <button ion-item *ngFor="let item of items"
+      (click)="seleciona(item.title)">
+        <ion-icon [name]="item.icon" item-start></ion-icon>
+          {{item.title}}
+    </button>
+  </ion-list>
+
+  
+  <ion-fab right middle>
+    <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-button (click)="adicionarConsumoArea()" color="dark" round><ion-icon name="football"></ion-icon></button>Nova Área Comum
+    </ion-fab-list>
+
+    <ion-fab-list side="left">
+      <button ion-button (click)="adicionarConsumoApartamento()" color="secondary" round><ion-icon name="people"></ion-icon></button>Novo Condomino
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

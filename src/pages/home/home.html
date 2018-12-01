@@ -6,14 +6,25 @@
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
+  
+<ion-content>
+  <ion-card>
+    <img src="../../assets/imgs/recursos_hidricos.jpg"/>
 
-<ion-content padding>
-  <div class="card">
-    <div class="item item-text-wrap">
-      This is a basic Card which contains an item that has wrapping text.
-      <ion-card-content *ngFor="let user of users">
-        {{user.razaosocial}}
-      </ion-card-content>
-    </div>
-  </div>
+    <ion-card-content>
+      <ion-card-title>
+        {{ dados.title }}
+      </ion-card-title>
+      <p>
+        {{ dados.descricao }}
+      </p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon color="primary" name='construct' item-start></ion-icon>
+      Projeto para DAD
+    </ion-item>
+
+  </ion-card>
+
 </ion-content>

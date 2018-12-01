@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Consumo Apartamento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card [class.invisivel]="novo"> 
+    <ion-card-content>
+      Média de Consumo (m3): {{media}} Litros
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Apartamento</ion-label>
+      <ion-select [(ngModel)]="apto">
+        <ion-option *ngFor="let ap of aptos" value="{{ap.codigo}}">
+            {{ap.apto}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Mês Referência</ion-label>
+      <ion-datetime displayFormat="MM/YYYY"
+                    [(ngModel)]="mes_ano" name="mes_ano"
+                    required #mesAno="ngModel"></ion-datetime>
+    </ion-item>    
+    <ion-item>
+        <ion-label color="primary">Meta de Consumo</ion-label>
+        <ion-input type="number" placeholder="" min="0"
+            [(ngModel)]="meta" name="meta"
+            required #metaC="ngModel"></ion-input>
+      </ion-item>  
+  </ion-list>
+
+  <div id="mais">
+    <button ion-button round color="primary" (click)="incluir()"
+      [disabled]="!mesAno.valid ||
+                  !metaC.valid" [class.invisivel]="!novo">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+    <button ion-button round color="primary" (click)="alterar()"
+      [disabled]="!mesAno.valid ||
+                  !metaC.valid" [class.invisivel]="novo">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+    <button ion-button round color="danger" (click)="excluir()"
+      [class.invisivel]="novo">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </div>
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Condomino</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label color="primary">Nome</ion-label>
+      <ion-input type="text" placeholder="Nome do Condomino"
+          [(ngModel)]="condomino.nome" name="condomino.nome"
+          required #nome="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">CPF</ion-label>
+      <ion-input type="text" placeholder="CPF do Condomino"
+          [(ngModel)]="condomino.cpf" name="condomino.cpf"
+          required #cpf="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY"
+                    [(ngModel)]="condomino.nascimento" name="condomino.nascimento"
+                    required #nascimento="ngModel"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Email</ion-label>
+      <ion-input type="email" placeholder="Email do Condomino"
+          [(ngModel)]="condomino.email" name="condomino.email"
+          required #email="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Endereço</ion-label>
+      <ion-input type="text" placeholder="Endereço do Condomino"
+          [(ngModel)]="condomino.endereco" name="condomino.endereco"
+          required #endereco="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Telefone</ion-label>
+      <ion-input type="text" placeholder="Telefone do Condomino"
+          [(ngModel)]="condomino.telefone" name="condomino.telefone"
+          required #telefone="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Qtdade Pessoas</ion-label>
+      <ion-input type="number" placeholder="Qtdade Pessoas que moram" min="0"
+          [(ngModel)]="condomino.qtdade_pessoas" name="condomino.qtdade_pessoas"
+          required #qtdade_pessoas="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Tempo de Permanência</ion-label>
+      <ion-input type="number" placeholder="Tempo de Permanência " min="0" max="24"
+          [(ngModel)]="condomino.tempo_permanencia" name="condomino.tempo_permanencia"
+          required #tempo_permanencia="ngModel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">Apartamento</ion-label>
+      <ion-select [(ngModel)]="condomino.apto">
+        <ion-option *ngFor="let ap of aptos" value="{{ap.codigo}}">
+            {{ap.apto}}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-card class="alerta" *ngIf="(!nome.valid && nome.dirty) ||
+                                  (!cpf.valid && cpf.dirty) ||
+                                  (!nascimento.valid && nascimento.dirty) ||
+                                  (!email.valid && email.dirty) ||
+                                  (!telefone.valid && telefone.dirty) ||
+                                  (!qtdade_pessoas.valid && qtdade_pessoas.dirty) ||
+                                  (!tempo_permanencia.valid && tempo_permanencia.dirty)">
+    <ion-card-content>
+      Todos os campos são obrigatórios.
+    </ion-card-content>
+  </ion-card>
+
+  <div id="mais">
+    <button ion-button round color="primary" (click)="incluir()"
+      [disabled]="!nome.valid ||
+                  !cpf.valid ||
+                  !nascimento.valid ||
+                  !email.valid ||
+                  !telefone.valid ||
+                  !qtdade_pessoas.valid ||
+                  !tempo_permanencia.valid" [class.invisivel]="!novo">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+    <button ion-button round color="primary" (click)="alterar()"
+      [disabled]="!nome.valid ||
+                  !cpf.valid ||
+                  !email.valid ||
+                  !nascimento.valid ||
+                  !telefone.valid ||
+                  !qtdade_pessoas.valid ||
+                  !tempo_permanencia.valid" [class.invisivel]="novo">
+      <ion-icon name="checkmark"></ion-icon>
+    </button>
+    <button ion-button round color="danger" (click)="excluir()"
+      [class.invisivel]="novo">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </div>
+</ion-content>

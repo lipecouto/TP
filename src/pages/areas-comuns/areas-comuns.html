@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Áreas Comuns</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <button ion-item *ngFor="let a of areas" 
+        (click)="selecionaArea(a.codigo)"> 
+        {{a.nome}} 
+      </button>  
+  </ion-list>
+    <div id="mais"> 
+      <button ion-button round color="primary" (click)="novoArea()"> 
+        <ion-icon name="add"></ion-icon> 
+      </button>
+    </div>  
+</ion-content>

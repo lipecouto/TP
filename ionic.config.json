@@ -1,8 +1,13 @@
 {
-  "name": "IonicHello",
+  "name": "hidrico",
   "integrations": {
     "cordova": {}
   },
   "type": "ionic-angular",
-  "pro_id": "c186242b"
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://webpuc.gigaup.com.br/php/api.php"
+    }
+  ]
 }

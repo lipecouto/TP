@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Condominos</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let c of condominos" 
+          (click)="selecionaCondomino(c.codigo)"> 
+          {{c.nome}}
+          <div class="item-note" item-end>
+              <h3>{{nomeApto(c.apto)}}</h3>
+          </div>
+        </button>
+    </ion-list>
+    <div id="mais"> 
+      <button ion-button round color="primary" (click)="novoCondomino()"> 
+        <ion-icon name="add"></ion-icon> 
+      </button>
+    </div>  
+  </ion-content>
+  
